@@ -12,6 +12,7 @@ import OctoKit
 class LabelTests: XCTestCase {
     static var allTests = [
         ("testGetLabel", testGetLabel),
+        ("testGetLabelEncodesSpaceCorrectly", testGetLabelEncodesSpaceCorrectly),
         ("testGetLabels", testGetLabels),
         ("testGetLabelsSetsPagination", testGetLabelsSetsPagination),
         ("testParsingLabel", testParsingLabel),
@@ -25,6 +26,20 @@ class LabelTests: XCTestCase {
             switch response {
             case .success(let label):
                 XCTAssertEqual(label.name, "bug")
+            case .failure:
+                XCTAssert(false, "should not get an error")
+            }
+        }
+        XCTAssertNotNil(task)
+        XCTAssertTrue(session.wasCalled)
+    }
+    
+    func testGetLabelEncodesSpaceCorrectly() {
+        let session = OctoKitURLTestSession(expectedURL: "https://api.github.com/repos/octocat/hello-world/labels/help%20wanted", expectedHTTPMethod: "GET", jsonFile: nil, statusCode: 200)
+        let task = Octokit().label(session, owner: "octocat", repository: "hello-world", name: "help wanted") { response in
+            switch response {
+            case .success:
+                XCTAssert(true)
             case .failure:
                 XCTAssert(false, "should not get an error")
             }
