@@ -26,6 +26,20 @@ class LabelTests: XCTestCase {
         XCTAssertTrue(session.wasCalled)
     }
     
+    func testGetLabelsSetsPagination() {
+        let session = OctoKitURLTestSession(expectedURL: "https://api.github.com/repos/octocat/hello-world/labels?page=2&per_page=50", expectedHTTPMethod: "GET", jsonFile: nil, statusCode: 200)
+        let task = Octokit().labels(session, owner: "octocat", repository: "hello-world", page: "2", perPage: "50") { response in
+            switch response {
+            case .success:
+                XCTAssert(true)
+            case .failure:
+                XCTAssert(false, "should not get an error")
+            }
+        }
+        XCTAssertNotNil(task)
+        XCTAssertTrue(session.wasCalled)
+    }
+
     
     // MARK: Parsing Tests
     func testParsingLabel() {
