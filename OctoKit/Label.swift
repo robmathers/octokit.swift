@@ -68,7 +68,7 @@ public extension Octokit {
     @discardableResult
     func postLabel(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, color: String, description: String?, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = LabelRouter.createLabel(configuration, owner, repository, name, color, description)
-        return router.postJSON(session, expectedResultType: Label.self) { label, error in
+        return router.post(session, expectedResultType: Label.self) { label, error in
             if let error = error {
                 completion(Response.failure(error))
             } else {
