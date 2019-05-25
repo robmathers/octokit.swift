@@ -54,6 +54,30 @@ public extension Octokit {
             }
         }
     }
+    
+    /**
+     Create a label in a repository
+     - parameter session: RequestKitURLSession, defaults to URLSession.sharedSession()
+     - parameter owner: The user or organization that owns the repository.
+     - parameter repository: The name of the repository.
+     - parameter name: The name of the label.
+     - parameter color: The color of the label, in hexadecimal without the leading `#`.
+     - parameter description: A short description of the label.
+     - parameter completion: Callback for the outcome of the request.
+     */
+    @discardableResult
+    func postLabel(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, color: String, description: String?, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
+        let router = LabelRouter.createLabel(configuration, owner, repository, name, color, description)
+        return router.postJSON(session, expectedResultType: Label.self) { label, error in
+            if let error = error {
+                completion(Response.failure(error))
+            } else {
+                if let label = label {
+                    completion(Response.success(label))
+                }
+            }
+        }
+    }
 }
 
 enum LabelRouter: JSONPostRouter {
