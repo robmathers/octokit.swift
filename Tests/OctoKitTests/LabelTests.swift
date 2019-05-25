@@ -11,6 +11,7 @@ import OctoKit
 
 class LabelTests: XCTestCase {
     static var allTests = [
+        ("testGetLabel", testGetLabel),
         ("testGetLabels", testGetLabels),
         ("testGetLabelsSetsPagination", testGetLabelsSetsPagination),
         ("testParsingLabel", testParsingLabel),
@@ -18,6 +19,20 @@ class LabelTests: XCTestCase {
     ]
 
     // MARK: Request Tests
+    func testGetLabel() {
+        let session = OctoKitURLTestSession(expectedURL: "https://api.github.com/repos/octocat/hello-world/labels/bug", expectedHTTPMethod: "GET", jsonFile: "label", statusCode: 200)
+        let task = Octokit().label(session, owner: "octocat", repository: "hello-world", name: "bug") { response in
+            switch response {
+            case .success(let label):
+                XCTAssertEqual(label.name, "bug")
+            case .failure:
+                XCTAssert(false, "should not get an error")
+            }
+        }
+        XCTAssertNotNil(task)
+        XCTAssertTrue(session.wasCalled)
+    }
+    
     func testGetLabels() {
         let session = OctoKitURLTestSession(expectedURL: "https://api.github.com/repos/octocat/hello-world/labels?page=1&per_page=100", expectedHTTPMethod: "GET", jsonFile: "labels", statusCode: 200)
         let task = Octokit().labels(session, owner: "octocat", repository: "hello-world") { response in
