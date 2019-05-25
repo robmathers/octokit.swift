@@ -139,6 +139,9 @@
 		D4D28F702299DBE600F8E92A /* labels.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F6F2299DBE600F8E92A /* labels.json */; };
 		D4D28F712299DBE600F8E92A /* labels.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F6F2299DBE600F8E92A /* labels.json */; };
 		D4D28F722299DBE600F8E92A /* labels.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F6F2299DBE600F8E92A /* labels.json */; };
+		D4D28F742299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
+		D4D28F752299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
+		D4D28F762299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
 		DABBDE501C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
 		DABBDE511C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
 		DABBDE521C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
@@ -277,6 +280,7 @@
 		BF8C79B71035B425F7748392 /* pull_requests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pull_requests.json; sourceTree = "<group>"; };
 		D4D28F6B2299D87300F8E92A /* LabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTests.swift; sourceTree = "<group>"; };
 		D4D28F6F2299DBE600F8E92A /* labels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = labels.json; path = Fixtures/labels.json; sourceTree = "<group>"; };
+		D4D28F732299DCE700F8E92A /* label.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = label.json; path = Fixtures/label.json; sourceTree = "<group>"; };
 		DABBDE4F1C8C0C20008F57CD /* issue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = issue.json; path = Fixtures/issue.json; sourceTree = "<group>"; };
 		DAEFC58F1C83D85100CF3785 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DAEFC5941C83EF0D00CF3785 /* Milestone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
@@ -382,6 +386,7 @@
 				DABBDE4F1C8C0C20008F57CD /* issue.json */,
 				515337A8224FC3760024544D /* issue2.json */,
 				E7EDEA6D1C871D0E006BAAF2 /* issues.json */,
+				D4D28F732299DCE700F8E92A /* label.json */,
 				D4D28F6F2299DBE600F8E92A /* labels.json */,
 				234F4BD81BDDE44600A58EF7 /* public_key.json */,
 				234F4BD91BDDE44600A58EF7 /* repo.json */,
@@ -708,6 +713,7 @@
 			files = (
 				E7EE59E01BE139FD0012E3D2 /* users.json in Resources */,
 				515337A9224FC3760024544D /* issue2.json in Resources */,
+				D4D28F742299DCE700F8E92A /* label.json in Resources */,
 				234F4BDF1BDDE44600A58EF7 /* user_me.json in Resources */,
 				234F4BDD1BDDE44600A58EF7 /* public_key.json in Resources */,
 				DABBDE501C8C0C20008F57CD /* issue.json in Resources */,
@@ -743,6 +749,7 @@
 			files = (
 				23F643501C7AEF72000427B3 /* users.json in Resources */,
 				515337AA224FC3760024544D /* issue2.json in Resources */,
+				D4D28F752299DCE700F8E92A /* label.json in Resources */,
 				23F6434A1C7AEF69000427B3 /* user_me.json in Resources */,
 				23F643461C7AEF63000427B3 /* public_key.json in Resources */,
 				DABBDE511C8C0C20008F57CD /* issue.json in Resources */,
@@ -771,6 +778,7 @@
 			files = (
 				23F643511C7AEF73000427B3 /* users.json in Resources */,
 				515337AB224FC3760024544D /* issue2.json in Resources */,
+				D4D28F762299DCE700F8E92A /* label.json in Resources */,
 				23F6434B1C7AEF6A000427B3 /* user_me.json in Resources */,
 				23F643471C7AEF63000427B3 /* public_key.json in Resources */,
 				DABBDE521C8C0C20008F57CD /* issue.json in Resources */,

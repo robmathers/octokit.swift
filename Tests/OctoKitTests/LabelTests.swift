@@ -25,4 +25,13 @@ class LabelTests: XCTestCase {
         XCTAssertNotNil(task)
         XCTAssertTrue(session.wasCalled)
     }
+    
+    
+    // MARK: Parsing Tests
+    func testParsingLabel() {
+        let label = Helper.codableFromFile("label", type: Label.self)
+        XCTAssertEqual(label.name, "bug")
+        XCTAssertEqual(label.color, "fc2929")
+        XCTAssertEqual(label.url, URL(string: "https://api.github.com/repos/octocat/hello-worId/labels/bug")!)
+    }
 }
