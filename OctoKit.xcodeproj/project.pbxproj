@@ -142,6 +142,7 @@
 		D4D28F742299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
 		D4D28F752299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
 		D4D28F762299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
+		D4D28F782299E9F200F8E92A /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */; };
 		DABBDE501C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
 		DABBDE511C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
 		DABBDE521C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
@@ -281,6 +282,7 @@
 		D4D28F6B2299D87300F8E92A /* LabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTests.swift; sourceTree = "<group>"; };
 		D4D28F6F2299DBE600F8E92A /* labels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = labels.json; path = Fixtures/labels.json; sourceTree = "<group>"; };
 		D4D28F732299DCE700F8E92A /* label.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = label.json; path = Fixtures/label.json; sourceTree = "<group>"; };
+		D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PercentEncoding.swift"; sourceTree = "<group>"; };
 		DABBDE4F1C8C0C20008F57CD /* issue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = issue.json; path = Fixtures/issue.json; sourceTree = "<group>"; };
 		DAEFC58F1C83D85100CF3785 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		DAEFC5941C83EF0D00CF3785 /* Milestone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				239BE7CB1B8C47A100D2CE22 /* Supporting Files */,
 				BF8C73E0EF3CEEBDEA68DD5E /* PullRequest.swift */,
 				BF8C72B985869B84F46B4E9D /* Parameters.swift */,
+				D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */,
 			);
 			path = OctoKit;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 			files = (
 				E7EE59DC1BE119110012E3D2 /* Follow.swift in Sources */,
 				23B2678A1BDDD756003887E3 /* Configuration.swift in Sources */,
+				D4D28F782299E9F200F8E92A /* String+PercentEncoding.swift in Sources */,
 				E7EE59D81BDFEFB30012E3D2 /* Stars.swift in Sources */,
 				23B2678D1BDDD756003887E3 /* Repositories.swift in Sources */,
 				F8711EA21BFCAE9F005DDACA /* Time.swift in Sources */,
