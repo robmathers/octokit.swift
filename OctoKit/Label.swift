@@ -68,7 +68,7 @@ public extension Octokit {
     @discardableResult
     func postLabel(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, color: String, description: String?, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
         let router = LabelRouter.createLabel(configuration, owner, repository, name, color, description)
-        return router.post(session, expectedResultType: Label.self) { label, error in
+        return router.post(createURLSessionToSupportLabelHeaders(), expectedResultType: Label.self) { label, error in
             if let error = error {
                 completion(Response.failure(error))
             } else {
@@ -77,6 +77,16 @@ public extension Octokit {
                 }
             }
         }
+    }
+    
+    func createURLSessionToSupportLabelHeaders() -> URLSession {
+        let config = URLSession.shared.configuration // get a copy of the shared URLSession configuration
+        
+        var headers = config.httpAdditionalHeaders ?? [:]
+        headers["Accept"] = "application/vnd.github.symmetra-preview+json" // This header is needed to support setting descriptions with the GitHub API
+        config.httpAdditionalHeaders = headers
+        
+        return URLSession.init(configuration: config)
     }
 }
 
