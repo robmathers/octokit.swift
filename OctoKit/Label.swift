@@ -92,6 +92,7 @@ enum LabelRouter: JSONPostRouter {
     var path: String {
         switch self {
         case .readLabel(_, let owner, let repository, let name):
+            guard let name = name.stringByAddingPercentEncodingForRFC3986() else { fatalError("Couldn't make label name URL-safe") }
             return "/repos/\(owner)/\(repository)/labels/\(name)"
         case .readLabels(_, let owner, let repository, _, _):
             return "/repos/\(owner)/\(repository)/labels"
