@@ -143,6 +143,9 @@
 		D4D28F752299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
 		D4D28F762299DCE700F8E92A /* label.json in Resources */ = {isa = PBXBuildFile; fileRef = D4D28F732299DCE700F8E92A /* label.json */; };
 		D4D28F782299E9F200F8E92A /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */; };
+		D4D28FA0229A02A900F8E92A /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */; };
+		D4D28FA1229A02A900F8E92A /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */; };
+		D4D28FA2229A02AA00F8E92A /* String+PercentEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D28F772299E9F200F8E92A /* String+PercentEncoding.swift */; };
 		DABBDE501C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
 		DABBDE511C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
 		DABBDE521C8C0C20008F57CD /* issue.json in Resources */ = {isa = PBXBuildFile; fileRef = DABBDE4F1C8C0C20008F57CD /* issue.json */; };
@@ -857,6 +860,7 @@
 			files = (
 				23CAF2A51C7AB6C2005011C4 /* Follow.swift in Sources */,
 				23CAF2AE1C7AB6CD005011C4 /* Repositories.swift in Sources */,
+				D4D28FA0229A02A900F8E92A /* String+PercentEncoding.swift in Sources */,
 				23CAF2B11C7AB6D1005011C4 /* User.swift in Sources */,
 				23CAF2A21C7AB6BE005011C4 /* Configuration.swift in Sources */,
 				23CAF2B71C7AB6EB005011C4 /* Time.swift in Sources */,
@@ -900,6 +904,7 @@
 			files = (
 				23CAF2A61C7AB6C2005011C4 /* Follow.swift in Sources */,
 				23CAF2AF1C7AB6CD005011C4 /* Repositories.swift in Sources */,
+				D4D28FA1229A02A900F8E92A /* String+PercentEncoding.swift in Sources */,
 				23CAF2B21C7AB6D1005011C4 /* User.swift in Sources */,
 				23CAF2A31C7AB6BF005011C4 /* Configuration.swift in Sources */,
 				23CAF2B81C7AB6EB005011C4 /* Time.swift in Sources */,
@@ -943,6 +948,7 @@
 			files = (
 				23CAF2A71C7AB6C3005011C4 /* Follow.swift in Sources */,
 				23CAF2B01C7AB6CE005011C4 /* Repositories.swift in Sources */,
+				D4D28FA2229A02AA00F8E92A /* String+PercentEncoding.swift in Sources */,
 				23CAF2B31C7AB6D2005011C4 /* User.swift in Sources */,
 				23CAF2A41C7AB6BF005011C4 /* Configuration.swift in Sources */,
 				23CAF2B91C7AB6EC005011C4 /* Time.swift in Sources */,
