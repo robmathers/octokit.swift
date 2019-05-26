@@ -91,7 +91,26 @@ class LabelTests: XCTestCase {
         XCTAssertTrue(session.wasCalled)
     }
     
-    
+    // MARK: Live tests
+    #warning("This shouldn't be put into final")
+    func testLiveCreateLabel() {
+        let expectation = XCTestExpectation(description: "Create a label")
+        
+        let config = TokenConfiguration("<#github token#>")
+        let task = Octokit(config).postLabel(owner: "robmathers", repository: "TestIssues", name: "My Test Label", color: "FFB12B", description: "Test Label") { response in
+            switch response {
+            case .success(let label):
+                print(label.name)
+            case .failure(let error):
+                print(error)
+            }
+            expectation.fulfill()
+        }
+        XCTAssertNotNil(task)
+        wait(for: [expectation], timeout: 10)
+    }
+
+    // MARK: Live tests
     // MARK: Parsing Tests
     func testParsingLabel() {
         let label = Helper.codableFromFile("label", type: Label.self)
