@@ -62,12 +62,11 @@ public extension Octokit {
      - parameter repository: The name of the repository.
      - parameter name: The name of the label.
      - parameter color: The color of the label, in hexadecimal without the leading `#`.
-     - parameter description: A short description of the label.
      - parameter completion: Callback for the outcome of the request.
      */
     @discardableResult
-    func postLabel(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, color: String, description: String?, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
-        let router = LabelRouter.createLabel(configuration, owner, repository, name, color, description)
+    func postLabel(_ session: RequestKitURLSession = URLSession.shared, owner: String, repository: String, name: String, color: String, completion: @escaping (_ response: Response<Label>) -> Void) -> URLSessionDataTaskProtocol? {
+        let router = LabelRouter.createLabel(configuration, owner, repository, name, color)
         return router.post(session, expectedResultType: Label.self) { label, error in
             if let error = error {
                 completion(Response.failure(error))
@@ -83,7 +82,7 @@ public extension Octokit {
 enum LabelRouter: JSONPostRouter {
     case readLabel(Configuration, String, String, String)
     case readLabels(Configuration, String, String, String, String)
-    case createLabel(Configuration, String, String, String, String, String?)
+    case createLabel(Configuration, String, String, String, String)
     
     var method: HTTPMethod {
         switch self {
@@ -107,7 +106,7 @@ enum LabelRouter: JSONPostRouter {
         switch self {
         case .readLabel(let config, _, _, _): return config
         case .readLabels(let config, _, _, _, _): return config
-        case .createLabel(let config, _, _, _, _, _): return config
+        case .createLabel(let config, _, _, _, _): return config
         }
     }
     
@@ -116,12 +115,8 @@ enum LabelRouter: JSONPostRouter {
         case .readLabel: return [:]
         case .readLabels(_, _, _, let page, let perPage):
             return ["per_page": perPage, "page": page]
-        case .createLabel(_, _, _, let name, let color, let description):
-            var params = ["name": name, "color": color]
-            if let description = description {
-                params["description"] = description
-            }
-            return params
+        case .createLabel(_, _, _, let name, let color):
+            return ["name": name, "color": color]
         }
     }
     
@@ -132,7 +127,7 @@ enum LabelRouter: JSONPostRouter {
             return "/repos/\(owner)/\(repository)/labels/\(name)"
         case .readLabels(_, let owner, let repository, _, _):
             return "/repos/\(owner)/\(repository)/labels"
-        case .createLabel(_, let owner, let repository, _, _, _):
+        case .createLabel(_, let owner, let repository, _, _):
             return "/repos/\(owner)/\(repository)/labels"
         }
     }
