@@ -1,11 +1,3 @@
-//
-//  LabelTests.swift
-//  OctoKitTests
-//
-//  Created by Rob Mathers on 2019-05-25.
-//  Copyright © 2019 nerdish by nature. All rights reserved.
-//
-
 import XCTest
 import OctoKit
 
